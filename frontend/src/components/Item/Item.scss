@@ -1,0 +1,22 @@
+.item {
+    margin: 20px 0;
+    &_inner {
+        box-shadow: 0 0 10px 0 rgba(127, 41, 250, 0.5);
+        padding: 10px;
+        border-radius: 5px;
+        background: #fafafa;
+        display: inline-block;
+        &:hover {
+            box-shadow: 0 0 10px 0 rgba(21, 20, 250, 1);
+        }
+    }
+    &_title {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    &_input {
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        padding: 5px;
+    }
+}

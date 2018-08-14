@@ -1,0 +1,50 @@
+Arguments: 
+  /Users/user/.nvm/versions/node/v8.9.1/bin/node /usr/local/Cellar/yarn/1.7.0/libexec/bin/yarn.js
+
+PATH: 
+  /opt/local/bin:/opt/local/sbin:/Users/user/Library/Android/sdk/platform-tools:/Users/user/.nvm/versions/node/v8.9.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/user/Android/Sdk/tools:/Users/user/Android/Sdk/platform-tools:/usr/local/mongodb/bin
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  8.9.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  SyntaxError: /Users/user/Projects/Ylab/api/package.json: Unexpected token ß in JSON at position 371
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:1130:59
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.7.0/libexec/lib/cli.js:109:13
+      at <anonymous>
+
+npm manifest: 
+  {
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "backend",
+    "main": "server.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": "node server.js",
+      "dev": "nodemon server.js"
+    },
+    "author": "Alex",
+    "license": "ISC",
+    "dependencies": {
+      "cors": "^2.8.4",
+      "express": "^4.16.3",
+      "mongoose": "^5.0.15",ß
+      "nodemon": "^1.17.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
