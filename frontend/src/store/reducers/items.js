@@ -16,8 +16,9 @@ const reducer = (state = initialState, action) => {
 			const root = action.items.find(i => !i.parent);
 			const flatten = (item, newItems = action.items) => {
 				function getItem(item) {
-					if (newItems.filter(i => item.id === i.parent).length !== 0) {
-						item.subItems = newItems.filter(i => item.id === i.parent).sort((a, b) => a.id - b.id);
+					const filteredArray = newItems.filter(i => item.id === i.parent);
+					if (filteredArray.length !== 0) {
+						item.subItems = filteredArray.sort((a, b) => a.id - b.id);
 						flatten(item.subItems);
 					}
 					item.editorMode = false;
