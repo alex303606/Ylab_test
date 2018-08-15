@@ -43,7 +43,9 @@ export default class Item extends React.Component {
 		const hasSubItems = !!subItems && subItems.length > 0;
 		return (
 			<li className="item">
-				<div onClick={(event) => this.props.editItemHandler(_id, event)} className='item_inner'>
+				<div
+					onClick={(event) => !value ? this.props.editItemHandler(_id, event) : null}
+					className='item_inner'>
 					{
 						editorMode ? <input
 								onKeyPress={this.props.inputHandlerKeyPress}
@@ -56,14 +58,14 @@ export default class Item extends React.Component {
 					}
 				</div>
 				{hasSubItems &&
-					<List
-						items={subItems}
-						value={this.props.value}
-						editItemHandler={this.props.editItemHandler}
-						inputChangeHandler={this.props.inputChangeHandler}
-						inputHandlerKeyPress={this.props.inputHandlerKeyPress}
-						saveItem={this.props.saveItem}
-					/>
+				<List
+					items={subItems}
+					value={this.props.value}
+					editItemHandler={this.props.editItemHandler}
+					inputChangeHandler={this.props.inputChangeHandler}
+					inputHandlerKeyPress={this.props.inputHandlerKeyPress}
+					saveItem={this.props.saveItem}
+				/>
 				}
 			</li>
 		);
